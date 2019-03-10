@@ -1,0 +1,9 @@
+-r common.txt
+
+# Tests
+behave-django
+coverage
+django-debug-toolbar
+model_mommy
+pytest-cov
+pytest-django

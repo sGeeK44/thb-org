@@ -1,0 +1,5 @@
+﻿# Web Server Gateway Interface
+uwsgi
+
+# Django
+Django

@@ -9,7 +9,15 @@ RUN \
     pip install --upgrade pip \
     && pip install -U setuptools
 
-COPY . /home/src
+ENV DJANGO_ROOT_APP_DIR /home/src
+WORKDIR $DJANGO_ROOT_APP_DIR
+
+# Install pip requirements.
+ARG REQUIREMENTS=common.txt
+COPY requirements $DJANGO_ROOT_APP_DIR/requirements
+RUN pip install -r requirements/$REQUIREMENTS
+
+COPY . $DJANGO_ROOT_APP_DIR
 
 EXPOSE 8000
 
